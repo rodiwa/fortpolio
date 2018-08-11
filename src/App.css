@@ -1,0 +1,21 @@
+div.banner-items {
+  height: 100vh
+}
+
+div.banner-items div.section-containers {
+  height: inherit;
+  justify-content: center;
+  align-content: space-evenly;
+  align-items: center;
+  padding: 3em;
+}
+
+div.section-title {
+  font-size: 2em;
+  text-align: center;
+}
+
+div.social-icons {
+  display: flex;
+  justify-content: space-evenly;
+}
