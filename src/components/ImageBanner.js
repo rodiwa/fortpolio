@@ -3,8 +3,8 @@ import React from 'react'
 import Grid from '@material-ui/core/Grid'
 
 const style = {
-  justifyContent: 'flex-end'
-  
+  alignItems: 'flex-end',
+  flexDirection: 'column',
 }
 
 const styleBox = {
@@ -34,10 +34,10 @@ export default class ImageBanner extends React.PureComponent {
   render() {
     return (
       <Grid container className='section-containers' style={style}>
-        <Grid item>
+        <Grid item style={styleSpan}>
           <span style={styleSpan1}>Web Developer</span>
         </Grid>
-        <Grid item>
+        <Grid item style={styleSpan}>
           <span style={styleSpan}>
             { skills.map((item, idx) => <span key={idx}>{item}</span>) }
           </span>

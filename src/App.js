@@ -6,6 +6,7 @@ import AboutMe from './components/AboutMe'
 import Skills from './components/Skills'
 import Work from './components/Work'
 import Contact from './components/Contact'
+import Clients from './components/Clients'
 
 import Grid from '@material-ui/core/Grid'
 
@@ -19,12 +20,15 @@ class App extends Component {
         <Grid className='banner-items' xs={12}>
           <AboutMe />
         </Grid>
-        <Grid className='banner-items' xs={12}>
+        <Grid className='banner-items work' xs={12}>
           <Work />
         </Grid>
         <Grid className='banner-items' xs={12}>
           <Skills />
         </Grid>
+        {/* <Grid className='banner-items' xs={12}>
+          <Clients />
+        </Grid> */}
         <Grid className='banner-items' xs={12}>
           <Contact />
         </Grid>

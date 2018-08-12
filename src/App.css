@@ -1,5 +1,23 @@
+body {
+  font-family: roboto;
+  /* font-family: 'Waiting for the Sunrise', cursive; */
+  font-weight: 100;
+}
+
+ul {
+  padding-inline-start: 1em;
+}
+
 div.banner-items {
-  height: 100vh
+  height: 100vh;
+}
+
+/* div.banner-items.work {
+  height: auto;
+} */
+
+div.banner-items:nth-child(2n+2) {
+  background: #f2f2f2;
 }
 
 div.banner-items div.section-containers {
@@ -11,11 +29,38 @@ div.banner-items div.section-containers {
 }
 
 div.section-title {
-  font-size: 2em;
+  font-family: 'Rock Salt', cursive;
+  font-size: 1.5em;
   text-align: center;
+  line-height: 2em;
 }
 
 div.social-icons {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+
+div.skills-card {
+  min-width: 175px;
+  height: 175px;
+  margin: 10px;
+}
+
+div.section-containers.skills .card-container, div.section-containers.work .card-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 20px 0;
+  margin-left: -3em;
+}
+
+div.section-containers.about-me .desc {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+div.section-icon {
+  font-size: 2em;
+  color: green;
+  text-align: center;
 }
