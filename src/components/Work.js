@@ -43,9 +43,6 @@ export default class Skills extends React.PureComponent {
             </CardContent>
           </Card>
         </Grid>    
-        <Grid item xs={12} sm={8} className='section-icon'>
-          <FaCodeBranch />
-        </Grid>
       </Grid>
     )
   }

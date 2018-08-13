@@ -17,14 +17,14 @@ class App extends Component {
         <Grid className='banner-items' xs={12}>
           <ImageBanner />
         </Grid>
-        <Grid className='banner-items' xs={12}>
+        <Grid className='banner-items about' xs={12}>
           <AboutMe />
+        </Grid>
+        <Grid className='banner-items skills' xs={12}>
+          <Skills />
         </Grid>
         <Grid className='banner-items work' xs={12}>
           <Work />
-        </Grid>
-        <Grid className='banner-items' xs={12}>
-          <Skills />
         </Grid>
         {/* <Grid className='banner-items' xs={12}>
           <Clients />

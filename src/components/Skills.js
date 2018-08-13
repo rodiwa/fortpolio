@@ -6,6 +6,7 @@ import CardActions from '@material-ui/core/CardActions'
 import Button from '@material-ui/core/Button'
 import { FaWrench } from 'react-icons/fa'
 import Typography from '@material-ui/core/Typography'
+import Highcharts from 'highcharts'
 
 const card = {
   title: {},
@@ -16,13 +17,38 @@ const card = {
 }
 
 export default class Skills extends React.PureComponent {
+  componentDidMount() {
+    // Highcharts.chart('pieChart', {
+    //   title: {
+    //       text: null
+    //   },
+    //   // xAxis: {
+    //   //     categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    //   // },
+    //   series: [{
+    //       type: 'pie',
+    //       allowPointSelect: true,
+    //       keys: ['name', 'y', 'selected', 'sliced'],
+    //       data: [
+    //         ['ReactJS', 50, true],
+    //         ['VueJS', 10, true],
+    //         ['Durandal', 10, true, true],
+    //         ['AngularJS', 20, false],
+    //         ['Angular', 10, false],
+    //         ['BackboneJS', 10, false],
+    //       ],
+    //       // showInLegend: true
+    //   }]
+    // });
+  }
+
   render() {
     return (
       <Grid container className='section-containers skills'>
         <Grid item xs={12} sm={8} className='section-title'>
           Technical Skillset
         </Grid>
-        <Grid item xs={12} className='card-container' >
+        {/* <Grid item xs={12} className='card-container' >
           <Card className='skills-card'>
             <CardContent>
               <Typography className={card.title} color="textSecondary">
@@ -152,10 +178,10 @@ export default class Skills extends React.PureComponent {
               </CardActions>
             </CardContent>
           </Card>
-        </Grid>    
-        <Grid item xs={12} sm={8} className='section-icon'>
-          <FaWrench />
-        </Grid>
+        </Grid>     */}
+        {/* <Grid item xs={12} sm={8} className='section-icon'>
+          <div id='pieChart'></div>
+        </Grid> */}
       </Grid>
     )
   }

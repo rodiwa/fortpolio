@@ -8,13 +8,13 @@ ul {
   padding-inline-start: 1em;
 }
 
-div.banner-items {
+div.banner-items:first-child, div.banner-items:last-child {
   height: 100vh;
 }
 
-/* div.banner-items.work {
+div.banner-items.about, div.banner-items.skills {
   height: auto;
-} */
+}
 
 div.banner-items:nth-child(2n+2) {
   background: #f2f2f2;
@@ -25,7 +25,7 @@ div.banner-items div.section-containers {
   justify-content: center;
   align-content: space-evenly;
   align-items: center;
-  padding: 3em;
+  padding: 5em 2em;
 }
 
 div.section-title {
@@ -54,13 +54,37 @@ div.section-containers.skills .card-container, div.section-containers.work .card
   margin-left: -3em;
 }
 
-div.section-containers.about-me .desc {
+div.section-containers.about-me .text .desc {
   text-align: center;
-  margin-bottom: 2em;
+  margin: 5em 0;
 }
 
 div.section-icon {
-  font-size: 2em;
-  color: green;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+div.about-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+}
+
+div.about-icons span.title {
+  font-weight: 400;
+  margin: 0.75em 0;
   text-align: center;
+}
+
+div.about-icons span.desc {
+  font-size: 0.9em;
+  color: #ccc;
+  font-weight: 100;
+}
+
+div.about-icons img {
+  width: 3em;
 }
