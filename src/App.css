@@ -71,6 +71,7 @@ div.about-icons {
   flex-direction: column;
   align-items: center;
   width: 150px;
+  margin-bottom: 3em;
 }
 
 div.about-icons span.title {
@@ -83,6 +84,7 @@ div.about-icons span.desc {
   font-size: 0.9em;
   color: #ccc;
   font-weight: 100;
+  text-align: center;
 }
 
 div.about-icons img {
