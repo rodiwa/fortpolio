@@ -90,3 +90,27 @@ div.about-icons span.desc {
 div.about-icons img {
   width: 3em;
 }
+
+div.charts {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 8em 0;
+}
+
+div.skills div.tools {
+  margin: 4em 0;
+}
+
+div.skills img.logo {
+  width: 40px;
+  margin: 5px 10px;
+}
+
+div.skills img.logo.long {
+  width: 100px;
+}
+
+div.skills .logo-container {
+  text-align: center;
+  padding: 2em;
+}

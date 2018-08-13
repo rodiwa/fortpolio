@@ -1,187 +1,113 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
-import Card from '@material-ui/core/Card'
-import CardContent from '@material-ui/core/CardContent'
-import CardActions from '@material-ui/core/CardActions'
-import Button from '@material-ui/core/Button'
-import { FaWrench } from 'react-icons/fa'
-import Typography from '@material-ui/core/Typography'
 import Highcharts from 'highcharts'
 
-const card = {
-  title: {},
-  more: {
-    display: 'flex',
-    alignItems: 'center',
+import Tabs from '@material-ui/core/Tabs'
+import Tab from '@material-ui/core/Tab'
+
+import LogoMaster from '../data/logos'
+
+export const LogoContainer = ({ type }) => {
+  let filteredList = LogoMaster.filter(item => {
+    return item.type === type
+  })
+
+  if (type === 'all') {
+    filteredList = LogoMaster
   }
+
+  return filteredList.map((item, idx) => {
+    const className = `logo ${item.long ? 'long' : ''}`
+    return (
+      <img key={idx} className={className} src={`${item.logo}`} />
+    )
+  })
 }
 
 export default class Skills extends React.PureComponent {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      type: 'all'
+    }
+
+    this.handleChange = this.handleChange.bind(this)
+  }
+
   componentDidMount() {
-    // Highcharts.chart('pieChart', {
-    //   title: {
-    //       text: null
-    //   },
-    //   // xAxis: {
-    //   //     categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-    //   // },
-    //   series: [{
-    //       type: 'pie',
-    //       allowPointSelect: true,
-    //       keys: ['name', 'y', 'selected', 'sliced'],
-    //       data: [
-    //         ['ReactJS', 50, true],
-    //         ['VueJS', 10, true],
-    //         ['Durandal', 10, true, true],
-    //         ['AngularJS', 20, false],
-    //         ['Angular', 10, false],
-    //         ['BackboneJS', 10, false],
-    //       ],
-    //       // showInLegend: true
-    //   }]
-    // });
+    const config = {
+      title: {
+          text: null
+      },
+      series: [{
+          type: 'pie',
+          allowPointSelect: true,
+          keys: ['name', 'y', 'selected', 'sliced'],
+          data: [
+            ['ReactJS', 50, true],
+            ['VueJS', 10, true],
+            ['Durandal', 10, true, true],
+            ['AngularJS', 20, false],
+            ['Angular', 10, false],
+            ['BackboneJS', 10, false],
+          ],
+      }]
+    }
+    Highcharts.chart('pieChart', config)
+    Highcharts.chart('pieChart2', config)
+  }
+
+  handleChange(event, type) {
+    this.setState({
+      type
+    })
   }
 
   render() {
     return (
       <Grid container className='section-containers skills'>
         <Grid item xs={12} sm={8} className='section-title'>
-          Technical Skillset
+          Technical Overview
         </Grid>
-        {/* <Grid item xs={12} className='card-container' >
-          <Card className='skills-card'>
-            <CardContent>
-              <Typography className={card.title} color="textSecondary">
-                UI Frameworks
-              </Typography>
-              <Typography component="p" className={card.content}>
-                <ul>
-                  <li>React-Redux</li>
-                  <li>Angular</li>
-                  <li>AngularJS</li>
-                </ul>
-              </Typography>
-            </CardContent>
-          </Card>
-          <Card className='skills-card'>
-            <CardContent>
-              <Typography className={card.title} color="textSecondary">
-                CSS Styling
-              </Typography>
-              <Typography component="p" className={card.content}>
-                <ul>
-                  <li>SCSS, SASS</li>
-                  <li>Flex, Grids</li>
-                  <li>Material UI, Bootstrap</li>
-                </ul>
-              </Typography>
-            </CardContent>
-          </Card>
-          <Card className='skills-card'>
-            <CardContent>
-              <Typography className={card.title} color="textSecondary">
-                Testing Tools
-              </Typography>
-              <Typography component="p" className={card.content}>
-                <ul>
-                  <li>Jest</li>
-                  <li>Enzyme</li>
-                  <li>Sinon, Mocha, Chai</li>
-                </ul>
-              </Typography>
-            </CardContent>
-          </Card>
-          <Card className='skills-card'>
-            <CardContent>
-              <Typography className={card.title} color="textSecondary">
-                Database
-              </Typography>
-              <Typography component="p" className={card.content}>
-                <ul>
-                  <li>MongoDB</li>
-                  <li>Firebase Realtime DB</li>
-                  <li>MySQL</li>
-                </ul>
-              </Typography>
-            </CardContent>
-          </Card>
-          <Card className='skills-card'>
-            <CardContent>
-              <Typography className={card.title} color="textSecondary">
-                Code Revision
-              </Typography>
-              <Typography component="p" className={card.content}>
-                <ul>
-                  <li>Github</li>
-                  <li>Github Desktop</li>
-                  <li>Git Bash</li>
-                </ul>
-              </Typography>
-            </CardContent>
-          </Card>
-          <Card className='skills-card'>
-            <CardContent>
-              <Typography className={card.title} color="textSecondary">
-                Issue Tracking
-              </Typography>
-              <Typography component="p" className={card.content}>
-                <ul>
-                  <li>JIRA</li>
-                  <li>Bugzilla</li>
-                  <li>Trello</li>
-                </ul>
-              </Typography>
-            </CardContent>
-          </Card>
-          <Card className='skills-card'>
-            <CardContent>
-              <Typography className={card.title} color="textSecondary">
-                Dev Tools
-              </Typography>
-              <Typography component="p" className={card.content}>
-                <ul>
-                  <li>Chrome Dev Tools</li>
-                  <li>React Dev</li>
-                  <li>Firebug</li>
-                </ul>
-              </Typography>
-            </CardContent>
-          </Card>
-          <Card className='skills-card'>
-            <CardContent>
-              <Typography className={card.title} color="textSecondary">
-                IDEs & Editors
-              </Typography>
-              <Typography component="p" className={card.content}>
-                <ul>
-                  <li>VS Code</li>
-                  <li>Atom</li>
-                  <li>Sublime 3</li>
-                </ul>
-              </Typography>
-            </CardContent>
-          </Card>
-          <Card className='skills-card'>
-            <CardContent>
-              <Typography className={card.title} color="textSecondary">
-                Misc
-              </Typography>
-              <Typography component="p" className={card.content}>
-                React Native, Native Base, Expo, PWA, Electron JS, VS Code Extensions, Balsamiq, Photoshop
-              </Typography>
-            </CardContent>
-          </Card>
-          <Card className='skills-card' style={card.more}>
-            <CardContent>
-              <CardActions>
-                <Button size="small" variant="contained" color="secondary">Show Me More</Button>
-              </CardActions>
-            </CardContent>
-          </Card>
-        </Grid>     */}
-        {/* <Grid item xs={12} sm={8} className='section-icon'>
-          <div id='pieChart'></div>
-        </Grid> */}
+        <Grid item className='charts'>
+          <Grid item xs={12} md={6} className='section-icon'>
+            <div id='pieChart'></div>
+          </Grid>
+          <Grid item xs={12} md={6} className='section-icon'>
+            <div id='pieChart2'></div>
+          </Grid>
+        </Grid>
+        <Grid item xs={12} className='tools'>
+          <Grid item xs={12}>
+            <Tabs fullWidth
+              value={this.state.type}
+              onChange={this.handleChange}
+              indicatorColor="primary"
+              textColor="primary"
+              scrollable
+              scrollButtons="auto"
+            >
+              <Tab label="All" value='all'/>
+              <Tab label="UI FW" value='ui'/>
+              <Tab label='CSS' value='css' />
+              <Tab label='Tests' value='tests' />
+              <Tab label='Backend' value='backend' />
+              <Tab label='DB' value='db' />
+              <Tab label='Issue' value='issue' />
+              <Tab label='Mockups' value='mockups' />
+              <Tab label="Package Managers" value='packageManager' />
+              <Tab label="Code Revision" value='codeRevision'/>
+              <Tab label='Utils' value='utils' />
+              <Tab label='Debugger' value='debugger' />
+              <Tab label='Editors' value='editors' />
+              <Tab label='Misc' value='misc' />
+            </Tabs>
+          </Grid>
+          <Grid item xs={12} className='logo-container'>
+            <LogoContainer type={this.state.type}/>          
+          </Grid>
+        </Grid>        
       </Grid>
     )
   }
