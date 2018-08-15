@@ -1,10 +1,12 @@
 import React from 'react'
-// import backgorund from '../images/open-sign-yellow.jpg'
+import background from '../images/bgs/apple-1.jpg'
 import Grid from '@material-ui/core/Grid'
 
 const style = {
   alignItems: 'flex-end',
   flexDirection: 'column',
+  color: 'white',
+  background: `url(${background}) no-repeat top center/cover`
 }
 
 const styleBox = {
@@ -14,16 +16,17 @@ const styleBox = {
   flexDirection: 'column',
   display: 'flex',
   alignItems: 'flex-end',
-  // backgroundImage: `url(${backgorund})`
 }
 
 const styleSpan = {
-  textAlign: 'right'
+  textAlign: 'right',
+  color: 'gold'
 }
 
 const styleSpan1 = {
-  fontSize: '3em',
-  textAlign: 'right'
+  fontSize: '2em',
+  textAlign: 'right',
+  fontFamily: '"Rock Salt", cursive',
 }
 
 const skills = [
@@ -33,13 +36,14 @@ const skills = [
 export default class ImageBanner extends React.PureComponent {
   render() {
     return (
-      <Grid container className='section-containers' style={style}>
+      <Grid container className='section-containers image-banner' style={style}>
         <Grid item style={styleSpan}>
           <span style={styleSpan1}>Web Developer</span>
         </Grid>
         <Grid item style={styleSpan}>
           <span style={styleSpan}>
-            { skills.map((item, idx) => <span key={idx}>{item}</span>) }
+            Ola! I'm Rohit from Mumbai and I'm here to help you make some really cool web apps
+            {/* { skills.map((item, idx) => <span key={idx}>{item}</span>) } */}
           </span>
         </Grid>
       </Grid>

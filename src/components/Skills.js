@@ -40,22 +40,31 @@ export default class Skills extends React.PureComponent {
       title: {
           text: null
       },
+      chart: {
+        backgroundColor: 'gold',
+        style: {
+          fontSize: '20px'
+        }
+      },
       series: [{
           type: 'pie',
           allowPointSelect: true,
           keys: ['name', 'y', 'selected', 'sliced'],
           data: [
-            ['ReactJS', 50, true],
-            ['VueJS', 10, true],
-            ['Durandal', 10, true, true],
-            ['AngularJS', 20, false],
-            ['Angular', 10, false],
-            ['BackboneJS', 10, false],
+            ['Yarn', 5, true],
+            ['ReactJS', 20, true],
+            ['Redux', 30, true],
+            ['Create React App', 15, true],
+            ['Material UI', 20, false],
+            ['Firebase Auth', 5, false],
+            ['FireBase Realtime DB', 15, false],
+            ['SCSS', 10, false],
+            ['Jest', 15, false],
+            ['Enzyme', 15, false],
           ],
       }]
     }
-    Highcharts.chart('pieChart', config)
-    Highcharts.chart('pieChart2', config)
+    // Highcharts.chart('pieChart', config)
   }
 
   handleChange(event, type) {
@@ -71,12 +80,9 @@ export default class Skills extends React.PureComponent {
           Technical Overview
         </Grid>
         <Grid item className='charts'>
-          <Grid item xs={12} md={6} className='section-icon'>
+          {/* <Grid item xs={12} md={6} className='section-icon chart'>
             <div id='pieChart'></div>
-          </Grid>
-          <Grid item xs={12} md={6} className='section-icon'>
-            <div id='pieChart2'></div>
-          </Grid>
+          </Grid> */}
         </Grid>
         <Grid item xs={12} className='tools'>
           <Grid item xs={12}>

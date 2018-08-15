@@ -23,7 +23,7 @@ export default class Contact extends React.PureComponent {
         <Grid item xs={12} sm={8} className='section-title'>
           Get In Touch
         </Grid>        
-        <Grid item xs={12} sm={8}>
+        <Grid item xs={12} sm={7}>
           <form noValidate autoComplete="off" style={style}>
             <TextField
               id="with-placeholder"
@@ -40,7 +40,7 @@ export default class Contact extends React.PureComponent {
             />
           </form>
         </Grid>
-        <Grid item xs={12} xs={8} className='social-icons'>
+        <Grid item xs={12} xs={6} className='social-icons'>
           <FaGithub style={socialBtnStyle} />
           <FaTwitter style={socialBtnStyle} />
           <FaLinkedinIn style={socialBtnStyle} />

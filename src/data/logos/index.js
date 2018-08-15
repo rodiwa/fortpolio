@@ -14,12 +14,13 @@ import jest from '../../images/tools/test/jest.png'
 import mocha from '../../images/tools/test/mocha.svg'
 import sinon from '../../images/tools/test/sinon.png'
 
-import firebaseLong from '../../images/tools/backend/firebase-long.png'
-import nodeLong from '../../images/tools/backend/node-long.png'
+// import firebaseLong from '../../images/tools/backend/firebase-long.png'
+import firebase from '../../images/tools/backend/firebase.png'
+import nodeLong from '../../images/tools/backend/node-long.svg'
 
 import firebaseDbLong from '../../images/tools/db/firebase-db-long.png'
 import mongoDbLong from '../../images/tools/db/mongodb-long.svg'
-import mysql from '../../images/tools/db/mysql.png'
+// import mysql from '../../images/tools/db/mysql.png'
 import robomongo from '../../images/tools/db/robomongo.png'
 
 import bugzilla from '../../images/tools/issue-tracking/bugzilla.png'
@@ -86,12 +87,12 @@ const logoMaster = [
     logo: `${vue}`,
     type: 'ui'
   },
-  {
-    name: 'backbone',
-    title: 'backbone',
-    logo: `${backbone}`,
-    type: 'ui'
-  },
+  // {
+  //   name: 'backbone',
+  //   title: 'backbone',
+  //   logo: `${backbone}`,
+  //   type: 'ui'
+  // },
   // css
   {
     name: 'bootstrap',
@@ -144,10 +145,9 @@ const logoMaster = [
   },
   // backend
   {
-    name: 'firebaseLong',
-    title: 'firebaseLong',
-    logo: `${firebaseLong}`,
-    long: true,
+    name: 'firebase',
+    title: 'firebase',
+    logo: `${firebase}`,
     type: 'backend'
   },
   {
@@ -172,13 +172,13 @@ const logoMaster = [
     long: true,
     type: 'db'
   },
-  {
-    name: 'mysql',
-    title: 'mysql',
-    logo: `${mysql}`,
-    long: true,
-    type: 'db'
-  },
+  // {
+  //   name: 'mysql',
+  //   title: 'mysql',
+  //   logo: `${mysql}`,
+  //   long: true,
+  //   type: 'db'
+  // },
   {
     name: 'robomongo',
     title: 'robomongo',
