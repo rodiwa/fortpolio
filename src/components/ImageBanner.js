@@ -20,7 +20,8 @@ const styleBox = {
 
 const styleSpan = {
   textAlign: 'right',
-  color: 'gold'
+  color: 'gold',
+  textShadow: '1px 1px 5px #000'
 }
 
 const styleSpan1 = {
