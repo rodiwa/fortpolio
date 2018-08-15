@@ -7,6 +7,18 @@ import Tab from '@material-ui/core/Tab'
 
 import LogoMaster from '../data/logos'
 
+// material ui colors
+// https://materialuicolors.co/
+const COLORS = {
+  RED: '#f06292',
+  LIME: '#dce775',
+  BLUE: '#4fc3f7',
+  TEAL: '#4db6ac',
+  ORANGE: '#ff8a65',
+  INDIGO: '#7986cb',
+  // CYAN: '#4dd0e1',
+}
+
 export const LogoContainer = ({ type }) => {
   let filteredList = LogoMaster.filter(item => {
     return item.type === type
@@ -36,35 +48,61 @@ export default class Skills extends React.PureComponent {
   }
 
   componentDidMount() {
+    let colors = [] //COLORS.map(item => item)
+    for (let color in COLORS) {
+      colors.push(COLORS[color])
+    }
     const config = {
       title: {
-          text: null
+        text: 'My Most Recent Tech Stack',
       },
       chart: {
         backgroundColor: 'gold',
-        style: {
-          fontSize: '20px'
-        }
+        width: 600,
+      },
+      credits: {
+        enabled: false
+      },
+      tooltip: {
+        enabled: false
       },
       series: [{
-          type: 'pie',
-          allowPointSelect: true,
-          keys: ['name', 'y', 'selected', 'sliced'],
-          data: [
-            ['Yarn', 5, true],
-            ['ReactJS', 20, true],
-            ['Redux', 30, true],
-            ['Create React App', 15, true],
-            ['Material UI', 20, false],
-            ['Firebase Auth', 5, false],
-            ['FireBase Realtime DB', 15, false],
-            ['SCSS', 10, false],
-            ['Jest', 15, false],
-            ['Enzyme', 15, false],
-          ],
+        type: 'pie',
+        borderColor: '#eee',
+        borderWidth: 1,
+        colors,
+        cursor: 'pointer',
+        dataLabels: {
+          style: {
+            fontSize: '0.8em',
+            fontFamily: 'roboto',
+            textOutline: null,
+            color: 'darkslategray',
+            fontWeight: 300
+          },
+          // connectorWidth: 2,
+          distance: -30,
+          // softConnector: 20,
+          useHTML: true,
+        },
+        padding: 50,
+        allowPointSelect: false,
+        keys: ['name', 'y', 'selected', 'sliced'],
+        data: [
+          ['Yarn', 5, true],
+          ['ReactJS', 20, true],
+          ['Redux', 30, true],
+          ['Create React App', 15, true],
+          ['Material UI', 20, false],
+          ['Firebase Auth', 5, false],
+          ['Firebase Realtime DB', 15, false],
+          ['SCSS', 10, false],
+          ['Jest', 15, false],
+          ['Enzyme', 15, false],
+        ],
       }]
     }
-    // Highcharts.chart('pieChart', config)
+    Highcharts.chart('pieChart', config)
   }
 
   handleChange(event, type) {
@@ -80,9 +118,9 @@ export default class Skills extends React.PureComponent {
           Technical Overview
         </Grid>
         <Grid item className='charts'>
-          {/* <Grid item xs={12} md={6} className='section-icon chart'>
+          <Grid item xs={12} md={6} className='section-icon chart'>
             <div id='pieChart'></div>
-          </Grid> */}
+          </Grid>
         </Grid>
         <Grid item xs={12} className='tools'>
           <Grid item xs={12}>

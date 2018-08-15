@@ -104,11 +104,11 @@ div.about-icons img {
 div.charts {
   display: flex;
   flex-wrap: wrap;
-  margin: 8em 0;
+  margin: 5em 0;
 }
 
 div.skills div.tools {
-  margin: 4em 0;
+  margin: 2em 0;
 }
 
 div.skills img.logo {
