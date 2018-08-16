@@ -40,7 +40,7 @@ export default class Contact extends React.PureComponent {
             />
           </form>
         </Grid>
-        <Grid item xs={12} xs={6} className='social-icons'>
+        <Grid item xs={12} sm={6} className='social-icons'>
           <FaGithub style={socialBtnStyle} />
           <FaTwitter style={socialBtnStyle} />
           <FaLinkedinIn style={socialBtnStyle} />

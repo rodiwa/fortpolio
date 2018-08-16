@@ -4,7 +4,6 @@ import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardActions from '@material-ui/core/CardActions'
 import Button from '@material-ui/core/Button'
-import { FaCodeBranch } from 'react-icons/fa'
 
 export default class Skills extends React.PureComponent {
   render() {

@@ -31,7 +31,7 @@ export const LogoContainer = ({ type }) => {
   return filteredList.map((item, idx) => {
     const className = `logo ${item.long ? 'long' : ''}`
     return (
-      <img key={idx} className={className} src={`${item.logo}`} />
+      <img key={idx} alt={item.title} className={className} src={`${item.logo}`} />
     )
   })
 }
@@ -54,11 +54,14 @@ export default class Skills extends React.PureComponent {
     }
     const config = {
       title: {
-        text: 'My Most Recent Tech Stack',
+        text: 'My Latest',
+        style: {
+          fontFamily: 'roboto',
+        }
       },
       chart: {
         backgroundColor: 'gold',
-        width: 600,
+        width: 400,
       },
       credits: {
         enabled: false
@@ -78,24 +81,26 @@ export default class Skills extends React.PureComponent {
             fontFamily: 'roboto',
             textOutline: null,
             color: 'darkslategray',
-            fontWeight: 300
+            fontWeight: 400
           },
           // connectorWidth: 2,
-          distance: -30,
+          distance: -40,
           // softConnector: 20,
           useHTML: true,
         },
         padding: 50,
         allowPointSelect: false,
         keys: ['name', 'y', 'selected', 'sliced'],
+        
         data: [
-          ['Yarn', 5, true],
-          ['ReactJS', 20, true],
-          ['Redux', 30, true],
-          ['Create React App', 15, true],
-          ['Material UI', 20, false],
-          ['Firebase Auth', 5, false],
-          ['Firebase Realtime DB', 15, false],
+          ['Yarn', 5, false],
+          ['ReactJS', 20, false],
+          ['Redux', 30, false],
+          ['CRA', 15, false],
+          ['VueJS', 10, false],
+          ['MUI', 20, false],
+          ['FB Auth', 5, false],
+          ['FB DB', 15, false],
           ['SCSS', 10, false],
           ['Jest', 15, false],
           ['Enzyme', 15, false],
@@ -114,15 +119,15 @@ export default class Skills extends React.PureComponent {
   render() {
     return (
       <Grid container className='section-containers skills'>
-        <Grid item xs={12} sm={8} className='section-title'>
+        <Grid item xs={12} md={8} className='section-title'>
           Technical Overview
         </Grid>
-        <Grid item className='charts'>
-          <Grid item xs={12} md={6} className='section-icon chart'>
+        <Grid item xs={12} md={8} className='charts'>
+          <Grid item xs={12} md={8} className='section-icon chart'>
             <div id='pieChart'></div>
           </Grid>
         </Grid>
-        <Grid item xs={12} className='tools'>
+        <Grid item xs={12} md={8} className='tools'>
           <Grid item xs={12}>
             <Tabs fullWidth
               value={this.state.type}

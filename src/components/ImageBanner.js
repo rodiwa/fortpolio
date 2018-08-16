@@ -9,15 +9,6 @@ const style = {
   background: `url(${background}) no-repeat top center/cover`
 }
 
-const styleBox = {
-  color: 'cornflowerblue',
-  fontWeight: 100,
-  maxWidth: '90vw',
-  flexDirection: 'column',
-  display: 'flex',
-  alignItems: 'flex-end',
-}
-
 const styleSpan = {
   textAlign: 'right',
   color: 'gold',
@@ -30,10 +21,6 @@ const styleSpan1 = {
   fontFamily: '"Rock Salt", cursive',
 }
 
-const skills = [
-  'ES6, JavaScript, React, Redux, Firebase, VS Code, Angular, Expo, React Native'
-]
-
 export default class ImageBanner extends React.PureComponent {
   render() {
     return (
@@ -44,7 +31,6 @@ export default class ImageBanner extends React.PureComponent {
         <Grid item style={styleSpan}>
           <span style={styleSpan}>
             Ola! I'm Rohit from Mumbai and I'm here to help you make some really cool web apps
-            {/* { skills.map((item, idx) => <span key={idx}>{item}</span>) } */}
           </span>
         </Grid>
       </Grid>
