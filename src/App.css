@@ -57,11 +57,7 @@ div.skills-card {
 }
 
 div.section-containers.skills .card-container, div.section-containers.work .card-container {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  padding: 20px 0;
-  margin-left: -3em;
+  padding: 4em 0 1em;
 }
 
 div.section-containers.about-me .text .desc {
