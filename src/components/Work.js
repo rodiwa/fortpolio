@@ -4,12 +4,6 @@ import Grid from '@material-ui/core/Grid'
 import GridList from '@material-ui/core/GridList'
 import GridListTile from '@material-ui/core/GridListTile'
 import GridListTileBar from '@material-ui/core/GridListTileBar'
-// import ListSubheader from '@material-ui/core/ListSubheader'
-
-// import food1 from '../images/sample/food1.jpg'
-// import food2 from '../images/sample/food2.jpg'
-// import food3 from '../images/sample/food3.jpg'
-// import food4 from '../images/sample/food4.jpg'
 
 import bno from '../images/clients/bno.png'
 import ck12 from '../images/clients/ck12.png'
