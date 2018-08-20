@@ -56,8 +56,43 @@ div.skills-card {
   margin: 10px;
 }
 
-div.section-containers.skills .card-container, div.section-containers.work .card-container {
+/*div.section-containers.skills .card-container,*/ div.section-containers.work .card-container {
   padding: 4em 0 1em;
+}
+div.section-containers.work .gridItem {
+  cursor: pointer;
+}
+
+div.section-containers.work .gridItem:hover {
+  opacity: 0.5;  
+}
+
+div.section-containers.work .modal-work-details {
+  background: green;
+}
+
+div.section-containers.work .work-details-modal {
+  display: flex;
+  flex-direction: column;
+}
+
+.work-details-modal .screen {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.work-details-modal .client, .work-details-modal .project {
+  text-align: center;
+}
+
+.work-details-modal .screen img {
+  width: 80%;
+}
+
+.work-details-modal .close-button {
+  justify-content: center;
+  display: flex;
 }
 
 div.section-containers.about-me .text .desc {

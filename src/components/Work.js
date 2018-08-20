@@ -1,98 +1,141 @@
 import React from 'react'
+import Modal from 'react-modal'
 import Grid from '@material-ui/core/Grid'
-
 import GridList from '@material-ui/core/GridList'
 import GridListTile from '@material-ui/core/GridListTile'
 import GridListTileBar from '@material-ui/core/GridListTileBar'
+import Button from '@material-ui/core/Button'
 
-import bno from '../images/clients/bno.png'
-import ck12 from '../images/clients/ck12.png'
-// import elm from '../images/clients/elm.png'
-import med from '../images/clients/med.png'
-import msft from '../images/clients/msft.svg'
-import nt from '../images/clients/nt.png'
-import qnst from '../images/clients/qnst.png'
+import projectsMaster from '../data/projects'
 
-import elmScreen from '../images/screens/elm-screen.png'
-// https://www.elliemae.com/solutions/consumer-engagement/encompass-consumer-connect
-import qnstScreen from '../images/screens/qnst-screen.png'
-import ck12Screen from '../images/screens/ck12-screen.png'
-import ntScreen from '../images/screens/nt-screen.png'
-import ntCompScreen from '../images/screens/nt-comp-screen.png'
-import medScreen from '../images/screens/meds-screen.png'
-import bnoScreen from '../images/screens/bno-screen.png'
-import msftScreen from '../images/screens/msft-screen.png'
-
-
-const tileData = [
-  {
-    img: `${elmScreen}`,
-    title: 'Consumer Connect',
-    author: 'EllieMae'
-  },
-  {
-    img: `${qnstScreen}`,
-    title: 'Media Platform',
-    author: 'Quinstreet'
-  },
-  {
-    img: `${ck12Screen}`,
-    title: 'Online Learning Portal',
-    author: 'CK 12'
-  },
-  {
-    img: `${ntScreen}`,
-    title: 'NT Web App',
-    author: 'NoodleTools'
-  },
-  {
-    img: `${ntCompScreen}`,
-    title: 'NT Companion (Mobile)',
-    author: 'NoodleTools'
-  },
-  {
-    img: `${medScreen}`,
-    title: 'HealthCare',
-    author: 'Medsolis'
-  },
-  {
-    img: `${bnoScreen}`,
-    title: 'Remote Airplay App',
-    author: 'Bang & Olufsen'
-  },
-  {
-    img: `${msftScreen}`,
-    title: 'SET Campaigns',
-    author: 'Microsoft'
+const ModalContent = ({ getNext, getPrev, closeModal, isActive }) => {
+  if (isActive >= projectsMaster.length) {
+    isActive = 0
   }
-]
+  const project = projectsMaster[isActive]
+  return (
+    <div className="work-details-modal">
+      <div className='client'><h2>{project.client}</h2></div>
+      <div className='project'><h3>{project.title}</h3></div>
+      <div className="screen">
+        <Button variant="contained" size="large" color="secondary" onClick={getPrev}>
+          Prev
+        </Button>
+        <img src={project.screen} />
+        <Button variant="contained" size="large" color="secondary" onClick={getNext}>
+          Next
+        </Button>
+      </div>
+      <div className='tools'>
+
+      </div>
+      <div className='desc'>
+        {project.desc}
+      </div>
+      <div className='close-button'>
+        <Button variant="contained" size="large" color="secondary" onClick={closeModal}>
+          Close
+        </Button>
+      </div>
+    </div>
+  )
+}
 
 const classes = {
-  gridList: {
+  gridList: '',
+  modalStyle: {
     
   }
 }
 
 export default class Skills extends React.PureComponent {
+  constructor(props) {
+    super(props)
+    this.state = {
+      isOpen: false,
+      isActive: 0 // default 1st project
+    }
+
+    this.openModal = this.openModal.bind(this)
+    this.closeModal = this.closeModal.bind(this)
+    this.getNext = this.getNext.bind(this)
+    this.getPrev = this.getPrev.bind(this)
+    this.handleClickProject = this.handleClickProject.bind(this)
+  }
+
+  componentDidMount() {
+    const el = document.getElementById('root')
+    Modal.setAppElement(el)
+  }
+
+  handleClickProject(idx) {
+    this.setState({ isActive: idx })
+    this.openModal()
+  }
+
+  openModal() {
+    this.setState({
+      isOpen: true
+    })
+  }
+
+  closeModal() {
+    this.setState({
+      isOpen: false
+    })
+  }
+
+  getNext() {
+    let next = this.state.isActive + 1
+    if (next >= projectsMaster.length) {
+      next = 0
+    }
+
+    this.setState({ isActive: next })
+  }
+
+  getPrev() {
+    let prev = this.state.isActive - 1
+    if (prev < 0) {
+      prev = projectsMaster.length - 1
+    }
+
+    this.setState({ isActive: prev })
+  }
+
   render() {
     return (
       <Grid container className='section-containers work'>
+        <Modal
+          // className='modal-work-details'
+          isOpen={this.state.isOpen}
+          onRequestClose={this.closeModal}
+          style={classes.modalStyle}
+          contentLabel="Example Modal"
+        >
+          <ModalContent
+            getNext={this.getNext}
+            getPrev={this.getPrev}
+            closeModal={this.closeModal}
+            isActive={this.state.isActive} />
+        </Modal>
+
         <Grid item xs={12} sm={8} className='section-title'>
           Work & Projects
         </Grid>     
         <Grid item xs={12} sm={8} className='card-container' >
-          <GridList cellHeight={180} className={classes.gridList} cols={3}>
-          {tileData.map(tile => (
-            <GridListTile key={tile.img}>
-              <img src={tile.img} alt={tile.title} />
+          <GridList cellHeight={180} cols={3}>
+          {projectsMaster.map((item, idx) => (
+            <GridListTile key={idx} onClick={() => this.handleClickProject(idx)}>
+              <img src={item.screen} alt={item.title} className={'gridItem'} />
               <GridListTileBar
-                title={tile.title}
-                subtitle={<span>{tile.author}</span>}
+                title={item.title}
+                subtitle={<span>{item.client}</span>}
               />
             </GridListTile>
           ))}
         </GridList>
-        </Grid>    
+        </Grid>
       </Grid>
     )
   }
