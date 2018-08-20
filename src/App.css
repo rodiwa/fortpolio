@@ -67,8 +67,10 @@ div.section-containers.work .gridItem:hover {
   opacity: 0.5;  
 }
 
-div.section-containers.work .modal-work-details {
-  background: green;
+div.work-details-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 div.section-containers.work .work-details-modal {

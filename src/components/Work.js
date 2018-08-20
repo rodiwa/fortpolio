@@ -6,6 +6,8 @@ import GridListTile from '@material-ui/core/GridListTile'
 import GridListTileBar from '@material-ui/core/GridListTileBar'
 import Button from '@material-ui/core/Button'
 
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md"
+
 import projectsMaster from '../data/projects'
 
 const ModalContent = ({ getNext, getPrev, closeModal, isActive }) => {
@@ -17,19 +19,15 @@ const ModalContent = ({ getNext, getPrev, closeModal, isActive }) => {
     <div className="work-details-modal">
       <div className='client'><h2>{project.client}</h2></div>
       <div className='project'><h3>{project.title}</h3></div>
-      <div className="screen">
-        <Button variant="contained" size="large" color="secondary" onClick={getPrev}>
-          Prev
-        </Button>
-        <img src={project.screen} />
-        <Button variant="contained" size="large" color="secondary" onClick={getNext}>
-          Next
-        </Button>
+      <div className="screen" style={{ background: '#f2f2f2', padding: '1em', borderRadius: '0.5em' }}>
+        <MdKeyboardArrowLeft onClick={getPrev} style={{ cursor: 'pointer' }} size={'3em'} />
+        <img src={project.screen} style={{ border: '1px solid #ccc' }}/>
+        <MdKeyboardArrowRight onClick={getNext} style={{ cursor: 'pointer' }} size={'3em'} />
       </div>
       <div className='tools'>
 
       </div>
-      <div className='desc'>
+      <div className='desc' style={{ margin: '1em 0' }}>
         {project.desc}
       </div>
       <div className='close-button'>

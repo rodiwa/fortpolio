@@ -25,7 +25,8 @@ const projectsMaster = [
     screen: `${elmScreen}`,
     tools: [`${firebase}`],
     clientLogo: `${elm}`,
-    desc: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p><p>Lorem ipsum dolor sit amet, consectetur quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo adipiscing elit.</p>'
+    desc: 'The loan app is to help loan officers to be able to collect and store data of potential customers who are applying for a new, or refinancing an existing loan.',
+    desc2: 'The loan app is to help loan officers to be able to collect and store data of potential customers who are applying for a new, or refinancing an existing loan.'
   },
   {
     title: 'Media Platform',
@@ -33,7 +34,7 @@ const projectsMaster = [
     screen: `${qnstScreen}`,
     tools: [`${firebase}`],
     clientLogo: `${qnst}`,
-    desc: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p><p>Lorem ipsum dolor sit amet, consectetur quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo adipiscing elit.</p>'
+    desc: 'QMP, is an internal management tool that consolidates, visualizes, and manages digital marketing data from various verticals such as Insurance, Education, Health, Finance, Auto, etc.'    
   },
   {
     title: 'Online Learning Portal',
@@ -41,7 +42,7 @@ const projectsMaster = [
     screen: `${ck12Screen}`,
     tools: [`${firebase}`],
     clientLogo: `${ck12}`,
-    desc: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p><p>Lorem ipsum dolor sit amet, consectetur quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo adipiscing elit.</p>'
+    desc: 'CK-12 Foundation provides a library of free online textbooks, videos, exercises, flashcards, and real-world applications for over 5000 concepts from arithmetic to students.'    
   },
   {
     title: 'NT Web App',
@@ -49,7 +50,7 @@ const projectsMaster = [
     screen: `${ntScreen}`,
     tools: [`${firebase}`],
     clientLogo: `${nt}`,
-    desc: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p><p>Lorem ipsum dolor sit amet, consectetur quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo adipiscing elit.</p>'
+    desc: 'NoodleTools is a web-based student research service that helps you correctly cite sources in MLA, APA, and Chicago/Turabian citation styles.'    
   },
   {
     title: 'NT Companion (Mobile)',
@@ -57,7 +58,7 @@ const projectsMaster = [
     screen: `${ntCompScreen}`,
     tools: [`${firebase}`],
     clientLogo: `${nt}`,
-    desc: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p><p>Lorem ipsum dolor sit amet, consectetur quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo adipiscing elit.</p>'
+    desc: 'NoodleTools Companion is the mobile app version of the NoodleTools website.'    
   },
   {
     title: 'HealthCare',
@@ -65,7 +66,7 @@ const projectsMaster = [
     screen: `${medScreen}`,
     tools: [`${firebase}`],
     clientLogo: `${med}`,
-    desc: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p><p>Lorem ipsum dolor sit amet, consectetur quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo adipiscing elit.</p>'
+    desc: 'Medsolis is a healthcare application that allows doctors, nurses and patients to interact with each other, share and report critical health statistics via a system.'    
   },
   {
     title: 'Remote Airplay App',
@@ -73,7 +74,7 @@ const projectsMaster = [
     screen: `${bnoScreen}`,
     tools: [`${firebase}`],
     clientLogo: `${bno}`,
-    desc: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p><p>Lorem ipsum dolor sit amet, consectetur quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo adipiscing elit.</p>'
+    desc: 'B&O is a high-end Danish consumer electronics company that designs and manufactures audio products, television sets, and telephones.'    
   },
   {
     title: 'SET Campaigns',
@@ -81,7 +82,7 @@ const projectsMaster = [
     screen: `${msftScreen}`,
     tools: [`${firebase}`],
     clientLogo: `${msft}`,
-    desc: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p><p>Lorem ipsum dolor sit amet, consectetur quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo adipiscing elit.</p>'
+    desc: 'Microsoft promotional campaigns were involved in online advertisements and event sponsorship for major brands.'    
   }
 ]
 
