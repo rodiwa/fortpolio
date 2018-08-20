@@ -130,6 +130,19 @@ export default class Skills extends React.PureComponent {
           onRequestClose={this.closeModal}
           style={classes.modalStyle}
           contentLabel="Example Modal"
+          style={{
+            content: {
+              // maxWidth: '1024px',
+              margin: '0 auto',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              top: 'inherit',
+              bottom: 'inherit',
+              left: 'inherit',
+              right: 'inherit',
+            }
+          }}
         >
           <ModalContent
             getNext={this.getNext}
