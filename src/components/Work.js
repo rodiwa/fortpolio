@@ -5,6 +5,7 @@ import GridList from '@material-ui/core/GridList'
 import GridListTile from '@material-ui/core/GridListTile'
 import GridListTileBar from '@material-ui/core/GridListTileBar'
 import Button from '@material-ui/core/Button'
+import withWidth from '@material-ui/core/withWidth'
 
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md"
 
@@ -21,7 +22,7 @@ const ModalContent = ({ getNext, getPrev, closeModal, isActive }) => {
       <div className='project'><h3>{project.title}</h3></div>
       <div className="screen" style={{ background: '#f2f2f2', padding: '1em', borderRadius: '0.5em' }}>
         <MdKeyboardArrowLeft onClick={getPrev} style={{ cursor: 'pointer' }} size={'3em'} />
-        <img src={project.screen} style={{ border: '1px solid #ccc' }}/>
+        <img alt={project.title} src={project.screen} style={{ border: '1px solid #ccc' }}/>
         <MdKeyboardArrowRight onClick={getNext} style={{ cursor: 'pointer' }} size={'3em'} />
       </div>
       <div className='tools'>
@@ -39,14 +40,13 @@ const ModalContent = ({ getNext, getPrev, closeModal, isActive }) => {
   )
 }
 
-const classes = {
-  gridList: '',
-  modalStyle: {
-    
-  }
-}
+const size = {
+  sm: 2,
+  md: 3,
+  lg: 3,
+};
 
-export default class Skills extends React.PureComponent {
+class Skills extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
@@ -128,7 +128,6 @@ export default class Skills extends React.PureComponent {
           // className='modal-work-details'
           isOpen={this.state.isOpen}
           onRequestClose={this.closeModal}
-          style={classes.modalStyle}
           contentLabel="Example Modal"
           style={{
             content: {
@@ -155,7 +154,7 @@ export default class Skills extends React.PureComponent {
           Work & Projects
         </Grid>     
         <Grid item xs={12} sm={8} className='card-container' >
-          <GridList cellHeight={180} cols={3}>
+          <GridList cellHeight={180} cols={size[this.props.width]}>
           {projectsMaster.map((item, idx) => (
             <GridListTile key={idx} onClick={() => this.handleClickProject(idx)}>
               <img src={item.screen} alt={item.title} className={'gridItem'} />
@@ -171,3 +170,5 @@ export default class Skills extends React.PureComponent {
     )
   }
 }
+
+export default withWidth()(Skills)
