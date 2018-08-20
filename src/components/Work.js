@@ -59,11 +59,31 @@ export default class Skills extends React.PureComponent {
     this.getNext = this.getNext.bind(this)
     this.getPrev = this.getPrev.bind(this)
     this.handleClickProject = this.handleClickProject.bind(this)
+    this.handleArrowKeyModal = this.handleArrowKeyModal.bind(this)
+  }
+
+  handleArrowKeyModal(e) {
+    if (!this.state.isOpen) {
+      return
+    }
+
+    if (!(e.keyCode === 37 || e.keyCode === 39)) {
+      return
+    }
+
+    const isLeftArrow = e.keyCode === 37
+
+    return isLeftArrow ? this.getPrev() : this.getNext()
   }
 
   componentDidMount() {
+    window.addEventListener('keyup', this.handleArrowKeyModal)
     const el = document.getElementById('root')
     Modal.setAppElement(el)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keyup', this.handleArrowKeyModal)
   }
 
   handleClickProject(idx) {
